@@ -1,0 +1,6 @@
+- id: "kebap.created.success"
+  translation: "Kebap was successfully created."
+- id: "kebap.updated.success"
+  translation: "Kebap was successfully updated."
+- id: "kebap.destroyed.success"
+  translation: "Kebap was successfully destroyed."

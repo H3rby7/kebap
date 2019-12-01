@@ -1,0 +1,21 @@
+<div class="page-header">
+  <h1>Kebap#Show</h1>
+</div>
+
+<ul class="list-unstyled list-inline">
+  <li class="list-inline-item">
+    <%= linkTo(kebapsPath(), {class: "btn btn-info"}) { %>
+      Back to all Kebaps
+    <% } %>
+  </li>
+  <li class="list-inline-item">
+    <%= linkTo(editKebapPath({ kebap_id: kebap.ID }), {class: "btn btn-warning", body: "Edit"}) %>
+  </li>
+  <li class="list-inline-item">
+    <%= linkTo(kebapPath({ kebap_id: kebap.ID }), {class: "btn btn-danger", "data-method": "DELETE", "data-confirm": "Are you sure?", body: "Destroy"}) %>
+  </li>
+</ul>
+
+<p>
+  <strong>Price</strong>: <%= kebap.Price %>
+</p>

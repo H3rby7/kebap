@@ -1,0 +1,35 @@
+<div class="page-header">
+  <h1>Kebaps</h1>
+</div>
+<ul class="list-unstyled list-inline">
+  <li>
+    <%= linkTo(newKebapsPath(), {class: "btn btn-primary"}) { %>
+      Create New Kebap
+    <% } %>
+  </li>
+</ul>
+
+<table class="table table-striped">
+  <thead>
+  <th>Price</th>
+    <th>&nbsp;</th>
+  </thead>
+  <tbody>
+    <%= for (kebap) in kebaps { %>
+      <tr>
+      <td><%= kebap.Price %></td>
+        <td>
+          <div class="pull-right">
+            <%= linkTo(kebapPath({ kebap_id: kebap.ID }), {class: "btn btn-info", body: "View"}) %>
+            <%= linkTo(editKebapPath({ kebap_id: kebap.ID }), {class: "btn btn-warning", body: "Edit"}) %>
+            <%= linkTo(kebapPath({ kebap_id: kebap.ID }), {class: "btn btn-danger", "data-method": "DELETE", "data-confirm": "Are you sure?", body: "Destroy"}) %>
+          </div>
+        </td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>
+
+<div class="text-center">
+  <%= paginator(pagination) %>
+</div>

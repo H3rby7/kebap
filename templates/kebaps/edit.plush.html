@@ -1,0 +1,8 @@
+<div class="page-header">
+  <h1>Edit Kebap</h1>
+</div>
+
+<%= formFor(kebap, {action: kebapPath({ kebap_id: kebap.ID }), method: "PUT"}) { %>
+  <%= partial("kebaps/form.html") %>
+  <%= linkTo(kebapPath({ kebap_id: kebap.ID }), {class: "btn btn-warning", "data-confirm": "Are you sure?", body: "Cancel"}) %>
+<% } %>
